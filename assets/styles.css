@@ -1,0 +1,378 @@
+/* ------------------------------------------------------------------
+   NLP Text Analysis Dashboard — visual identity
+   Ink navy + laboratory teal, Source Serif display over Inter UI,
+   JetBrains Mono for anything the pipeline produced.
+------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --ink: #10202F;
+    --slate: #37536B;
+    --muted: #7C8FA0;
+    --line: #DCE4EA;
+    --canvas: #F4F7F9;
+    --surface: #FFFFFF;
+    --accent: #146C63;
+    --accent-soft: #E2F0ED;
+    --amber: #B45309;
+    --amber-soft: #FBF0E2;
+    --radius: 10px;
+}
+
+html, body, [class*="st-"], .stMarkdown, .stButton button {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.stApp {
+    background: var(--canvas);
+}
+
+/* Trim Streamlit's default top padding */
+.block-container {
+    padding-top: 2.2rem;
+    padding-bottom: 3rem;
+    max-width: 1180px;
+}
+
+/* ----------------------------- Hero ----------------------------- */
+.hero {
+    border-left: 3px solid var(--accent);
+    padding: 0.2rem 0 0.2rem 1.15rem;
+    margin-bottom: 1.9rem;
+}
+
+.hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.hero-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.35rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0.45rem 0 0.5rem 0;
+}
+
+.hero-sub {
+    color: var(--slate);
+    font-size: 0.98rem;
+    max-width: 62ch;
+    margin: 0;
+}
+
+/* --------------------------- Sections --------------------------- */
+.section-label {
+    font-size: 0.74rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 1.6rem 0 0.6rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.mini-label {
+    font-size: 0.73rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 1.2rem 0 0.5rem 0;
+}
+
+.process-blurb {
+    color: var(--slate);
+    font-size: 0.94rem;
+    margin: -0.2rem 0 0.9rem 0;
+    max-width: 76ch;
+}
+
+.input-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--muted);
+    padding-top: 0.55rem;
+}
+
+/* ---------------------------- Inputs ---------------------------- */
+.stTextArea textarea {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-size: 0.97rem;
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 0.9rem 1rem;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ---------------------------- Buttons --------------------------- */
+.stButton button {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.62rem 0.5rem;
+    transition: transform 0.12s ease, border-color 0.12s ease,
+                background 0.12s ease, color 0.12s ease;
+}
+
+.stButton button:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.stButton button:focus-visible {
+    outline: 3px solid var(--accent-soft);
+    outline-offset: 2px;
+}
+
+.stDownloadButton button {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.84rem;
+    margin-top: 0.9rem;
+}
+
+.stDownloadButton button:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ----------------------------- Tabs ----------------------------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding: 0.5rem 0.9rem;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--accent) !important;
+}
+
+.stTabs [data-baseweb="tab-highlight"] {
+    background-color: var(--accent);
+}
+
+/* -------------------------- Token strip ------------------------- */
+.chip-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.95rem;
+    margin-bottom: 1rem;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.24rem 0.5rem;
+    background: #FBFDFD;
+}
+
+.chip-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.83rem;
+    color: var(--ink);
+}
+
+.chip-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.chip-accent {
+    background: var(--accent-soft);
+    border-color: #BEDDD7;
+}
+.chip-accent .chip-tag { color: var(--accent); }
+
+.chip-keep {
+    background: var(--accent-soft);
+    border-color: #BEDDD7;
+}
+.chip-keep .chip-tag { color: var(--accent); }
+
+.chip-muted {
+    background: #F1F4F6;
+    border-color: var(--line);
+    opacity: 0.62;
+}
+.chip-muted .chip-text { text-decoration: line-through; }
+
+/* -------------------------- Stat cards -------------------------- */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 0.75rem;
+    margin: 0.4rem 0 0.6rem 0;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 0.85rem 0.95rem;
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.32rem;
+    font-weight: 500;
+    color: var(--ink);
+    word-break: break-word;
+}
+
+/* --------------------- spaCy render container ------------------- */
+.render-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.15rem;
+    overflow: auto;
+    line-height: 2.1;
+    color: var(--ink);
+}
+
+.render-box svg { max-width: none; }
+
+/* ---------------------------- Sidebar --------------------------- */
+[data-testid="stSidebar"] {
+    background: var(--ink);
+    border-right: 1px solid #0A1723;
+}
+
+[data-testid="stSidebar"] * {
+    color: #DAE3EA;
+}
+
+[data-testid="stSidebar"] h3 {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #7FB8B1 !important;
+    margin-top: 1.5rem;
+}
+
+.side-brand {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+}
+
+.side-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #7FB8B1 !important;
+    margin-bottom: 0.5rem;
+}
+
+.side-note {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #AFC0CD !important;
+    border-left: 2px solid #2C4356;
+    padding: 0.1rem 0 0.1rem 0.6rem;
+    margin-bottom: 0.7rem;
+}
+
+.side-note b { color: #FFFFFF; }
+
+.side-foot {
+    font-size: 0.72rem;
+    color: #6B8095 !important;
+    margin-top: 1.6rem;
+    border-top: 1px solid #24394B;
+    padding-top: 0.7rem;
+}
+
+[data-testid="stSidebar"] .stButton button {
+    background: transparent;
+    color: #DAE3EA;
+    border: 1px solid #2C4356;
+}
+
+[data-testid="stSidebar"] .stButton button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+/* --------------------------- Misc ------------------------------- */
+.empty-state {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 2.6rem 1rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-top: 1.6rem;
+}
+
+.page-foot {
+    margin-top: 2.8rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+#MainMenu, footer { visibility: hidden; }
+
+@media (max-width: 640px) {
+    .hero-title { font-size: 1.75rem; }
+    .stat-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stButton button { transition: none; }
+    .stButton button:hover { transform: none; }
+}
